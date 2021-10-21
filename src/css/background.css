@@ -1,0 +1,24 @@
+#body {
+    background-color: black;
+}
+
+#bg,#content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+#bg {
+    background: -webkit-radial-gradient(center, ellipse, #7289da 0%, #000000 100%);
+    background: radial-gradient(ellipse at center, #7289da 0%, #000000 100%);
+    overflow: hidden;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

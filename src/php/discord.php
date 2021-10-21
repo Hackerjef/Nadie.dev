@@ -78,4 +78,3 @@ if(isset($_GET['image']))
 $obj = (object) [];
 echo json_encode($obj);
 exit;
-
