@@ -1,0 +1,76 @@
+.modal-dialog-term {
+  height: 90%;
+}
+.modal-content-term {
+  height: 100%;
+}
+
+#Termbody {
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+  margin:0;
+  background-color:#000000;
+  font-family:"Ubuntu Mono", monospace;
+  color:white;
+  width:100%;
+}
+
+#Termbody::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#Termbody::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#Termbody::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+  -webkit-box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.3);
+	background-color: #555;
+}
+
+#Termtable {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  border-collapse: collapse;
+  background: none;
+}
+
+#termtr {
+  background:none;
+}
+
+#termtd{
+  box-sizing:border-box;
+}
+
+
+.input {
+    display: inline-block;
+    position: relative;
+    min-width: 5px;
+    /** /border:1px solid #00ff00;/**/
+}
+
+.input:focus {
+    border-color: #ff0000;
+    /*/
+}
+  .input:focus{
+  border:none;/**/
+    outline: none;
+}

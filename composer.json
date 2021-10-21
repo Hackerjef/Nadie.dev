@@ -1,0 +1,16 @@
+{
+    "name": "augus/nadie.dev",
+    "type": "project",
+    "authors": [
+        {
+            "name": "August",
+            "email": "hackerjef@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "ralouphie/mimey": "^2.1",
+        "restcord/restcord": "^0.4.0",
+        "rmccue/requests": "^1.7",
+        "cheprasov/php-redis-client": "^1.10"
+    }
+}
