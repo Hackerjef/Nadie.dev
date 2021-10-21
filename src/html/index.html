@@ -16,25 +16,18 @@
         <div id="content">
             <div class="info">
                 <div class="avatar"></div>
-                <div class="name">
-                    <h4>Nadie (August)</a>
-                </div>
+                <div class="name"><h4>Nadie (August)</a></div>
                 <div class="seperator_vert" role="separator"></div>
                 <div class="btn-group" role="group">
-                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="github"><i
-                            class="fab fa-github"></i> Github</button>
+                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="github"><i class="fab fa-github"></i> Github</button>
                     <div class="seperator_hor" role="separator"></div>
-                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="Twitter"><i
-                            class="fab fa-twitter"></i> Twitter</button>
+                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="Twitter"><i class="fab fa-twitter"></i> Twitter</button>
                     <div class="seperator_hor" role="separator"></div>
-                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="steam"><i
-                            class="fab fa-steam"></i> Steam</button>
+                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="steam"><i class="fab fa-steam"></i> Steam</button>
                     <div class="seperator_hor" role="separator"></div>
-                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="discord"><i
-                            class="fab fa-discord"></i> Discord</button>
+                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="discord"><i class="fab fa-discord"></i> Discord</button>
                     <div class="seperator_hor" role="separator"></div>
-                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="terminal"><i
-                            class="fab fa-linux"></i> Terminal</button>
+                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="terminal"><i class="fab fa-linux"></i> Terminal</button>
                 </div>
             </div>
         </div>
@@ -51,10 +44,8 @@
                     <a><strong id="duser">None</strong> <a id="dID">None</a></a>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-outline-dark rounded mr-auto" data-dismiss="modal"
-                        onclick="webload(this.id, 15)" id="discordbio"><i class="fab fa-discord"></i> Discord
-                        Bio</button>
-                    <button type="button" class="btn btn-outline-dark rounded" data-dismiss="modal">Close</button>
+                    <button class="btn btn-outline-dark rounded mr-auto" data-dismiss="modal" onclick="webload(this.id, 15)" id="discordbio"><i class="fab fa-discord"></i> Discord Bio</button>
+                    <button type="button" class="btn btn-outline-dark rounded" data-dismiss="modal" onclick="$('#discordpopup').modal('hide')" >Close</button>
                 </div>
             </div>
         </div>
@@ -66,21 +57,18 @@
             <div class="modal-content modal-content-term">
                 <div class="modal-header">
                     <h5 class="modal-title" id="Statusterminal">Terminal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
                 <div class="modal-body" id="Termbody">
                     <table id="Termtable"></table>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-outline-dark rounded mr-auto" onclick="start_linux()" id="bootlinux"><i
-                            class="fab fa-linux"></i> Boot Linux</button>
-                    <button type="button" class="btn btn-outline-dark rounded" data-dismiss="modal">Close</button>
+                    <button class="btn btn-outline-dark rounded mr-auto" onclick="start_linux()" id="bootlinux"><i class="fab fa-linux"></i> Boot Linux</button>
+                    <button type="button" class="btn btn-outline-dark rounded" data-dismiss="modal" onclick="$('#terminalpopup').modal('hide')">Close</button>
                 </div>
             </div>
         </div>
     </div>
+    <script src="./jquery.min.js"></script>
 </body>
 
 </html>

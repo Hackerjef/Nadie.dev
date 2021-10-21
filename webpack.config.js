@@ -1,5 +1,7 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MergeIntoSingleFilePlugin = require("webpack-merge-and-include-globally");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -10,9 +12,9 @@ module.exports = {
         port: 9000,
         http2: true,
         setupExitSignals: true,
+        hot: true
     },
     mode: "none",
-    hot: true,
     entry: {
         main: path.resolve(__dirname, "./src/js/sites/main.js"),
         streambackground: path.resolve(__dirname, "./src/js/sites/streambackground.js"),
@@ -23,6 +25,10 @@ module.exports = {
         clean: true
     },
     plugins: [
+        new CleanWebpackPlugin(),
+        new MergeIntoSingleFilePlugin({ 
+            files: { "jquery.min.js": [ "node_modules/jquery/dist/jquery.min.js"]}
+        }),
         new miniCssExtractPlugin({
             filename: "[name].[hash].css",
         }),
