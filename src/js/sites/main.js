@@ -37,7 +37,6 @@ window.webload = function (btnID, timeout=3000) {
         window.open("https://steamcommunity.com/profiles/76561198081061317", "_blank");
         break;
     case "discord":
-        updateDiscordinfo();
         clearTimeout(data[btnID].timeout);
         $("#discordpopup").on("hidden.bs.modal", function () {
             stop_load(btnID);
@@ -85,6 +84,7 @@ var updateDiscordinfo = once(function () {
             var UserData = JSON.parse(xhttp.responseText);
             document.getElementById("duser").innerHTML = `${UserData["username"]}#${UserData["discriminator"]}`;
             document.getElementById("dID").innerHTML = `(${UserData["id"]})`;
+            $(".avatar").css("background-image", "url(" + UserData["avatarurl"] + ")");
         }
     };
     xhttp.open("GET", "php/discord.php?data", true);
@@ -106,4 +106,4 @@ function once(fn, context) {
 }
 
 
-console.log("Intresting");
+updateDiscordinfo();

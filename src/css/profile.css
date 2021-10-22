@@ -9,6 +9,7 @@
     text-align: center;
 }
 
+/* NOTE: Because webpack likes to hash the php file used to get the image, we  */
 .avatar {
     display: block;
     margin: 0 auto 15px;
@@ -18,7 +19,6 @@
     border: rgb(0, 0, 0) 3px solid;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, inset rgba(0, 0, 0, 0.4) 0px 3px 2px;
     overflow: hidden;
-    background-image: url("../php/discord.php?image");
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto, 100%;

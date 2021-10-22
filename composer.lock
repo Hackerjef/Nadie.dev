@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f8e5d9aeb5921155e5cac65e3915504",
+    "content-hash": "744b1a86861268ab38dc429c4cdde7ba",
     "packages": [
         {
             "name": "cheprasov/php-redis-client",
@@ -245,16 +245,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "136a635e2b4a49b9d79e9c8fee267ffb257fdba0"
+                "reference": "fe752aedc9fd8fcca3fe7ad05d419d32998a06da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/136a635e2b4a49b9d79e9c8fee267ffb257fdba0",
-                "reference": "136a635e2b4a49b9d79e9c8fee267ffb257fdba0",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/fe752aedc9fd8fcca3fe7ad05d419d32998a06da",
+                "reference": "fe752aedc9fd8fcca3fe7ad05d419d32998a06da",
                 "shasum": ""
             },
             "require": {
@@ -309,7 +309,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/1.5.0"
+                "source": "https://github.com/guzzle/promises/tree/1.5.1"
             },
             "funding": [
                 {
@@ -325,7 +325,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-10-07T13:05:22+00:00"
+            "time": "2021-10-22T20:56:57+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -736,20 +736,20 @@
         },
         {
             "name": "ralouphie/mimey",
-            "version": "1.0.2",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ralouphie/mimey.git",
-                "reference": "2a0e997c733b7c2f9f8b61cafb006fd5fb9fa15a"
+                "reference": "d69688d4856daa13a9124c819d148ccc2235dea2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ralouphie/mimey/zipball/2a0e997c733b7c2f9f8b61cafb006fd5fb9fa15a",
-                "reference": "2a0e997c733b7c2f9f8b61cafb006fd5fb9fa15a",
+                "url": "https://api.github.com/repos/ralouphie/mimey/zipball/d69688d4856daa13a9124c819d148ccc2235dea2",
+                "reference": "d69688d4856daa13a9124c819d148ccc2235dea2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3"
+                "php": "^5.3|^7.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~3.7.0",
@@ -776,7 +776,7 @@
                 "issues": "https://github.com/ralouphie/mimey/issues",
                 "source": "https://github.com/ralouphie/mimey/tree/master"
             },
-            "time": "2016-09-28T03:36:23+00:00"
+            "time": "2017-01-27T20:57:22+00:00"
         },
         {
             "name": "restcord/restcord",

@@ -1,6 +1,6 @@
 <?php
+require __DIR__ . '/../../vendor/autoload.php';
 
-require __DIR__ . '/../vendor/autoload.php';
 use RestCord\DiscordClient;
 use RedisClient\RedisClient;
 
@@ -52,7 +52,11 @@ $data = json_decode($sdata);
 
 if(isset($_GET['data']))
 {
-   $data->tsr = 86400 - $Redis->ttl($REDIS_KEY);
+   if ($Redis !== NULL) {
+      $data->tsr = 86400 - $Redis->ttl($REDIS_KEY);
+   } else {
+      $data->tsr = -1;
+   }
    echo json_encode($data);
    exit;
 }
