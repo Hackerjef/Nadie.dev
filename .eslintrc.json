@@ -1,5 +1,5 @@
 {
-    "ignorePatterns": ["**/dist/**"],
+    "ignorePatterns": ["**/dist/**","**/src/v86/**"],
     "env": {
         "browser": true,
         "es2021": false,

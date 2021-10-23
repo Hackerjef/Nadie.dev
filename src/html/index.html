@@ -16,7 +16,7 @@
         <div id="content">
             <div class="info">
                 <div class="avatar"></div>
-                <div class="name"><h4>Nadie (August)</a></div>
+                <div class="name"><h4>Nadie (August)</h4></div>
                 <div class="seperator_vert" role="separator"></div>
                 <div class="btn-group" role="group">
                     <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="github"><i class="fab fa-github"></i> Github</button>
@@ -58,17 +58,15 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="Statusterminal">Terminal</h5>
                 </div>
-                <div class="modal-body" id="Termbody">
-                    <table id="Termtable"></table>
-                </div>
+                <div class="modal-body" id="terminaldiv"></div>
                 <div class="modal-footer">
-                    <button class="btn btn-outline-dark rounded mr-auto" onclick="start_linux()" id="bootlinux"><i class="fab fa-linux"></i> Boot Linux</button>
                     <button type="button" class="btn btn-outline-dark rounded" data-dismiss="modal" onclick="$('#terminalpopup').modal('hide')">Close</button>
                 </div>
             </div>
         </div>
     </div>
     <script src="./jquery.min.js"></script>
+    <script src="./v86/libv86.js"></script>
 </body>
 
 </html>

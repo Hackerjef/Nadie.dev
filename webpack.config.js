@@ -4,6 +4,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MergeIntoSingleFilePlugin = require("webpack-merge-and-include-globally");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
 
 const Promise = require("Promise");
 var commandExists = require("command-exists");
@@ -25,28 +27,40 @@ var cfg = {
         },
         proxy: {}
     },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            "...",
+            new CssMinimizerPlugin(),
+        ],
+    },
     mode: "none",
     entry: {
         main: path.resolve(__dirname, "./src/js/sites/main.js"),
-        streambackground: path.resolve(__dirname, "./src/js/sites/streambackground.js"),
+        streambackground: path.resolve(__dirname, "./src/js/sites/streambackground.js")
     },
     output: {
         path: path.resolve(__dirname, "./dist"),
-        filename: "[name].[hash].js",
+        filename: "[name].[fullhash].js",
         clean: true
     },
     plugins: [
+        new CssMinimizerPlugin(),
         new CleanWebpackPlugin(),
         new MergeIntoSingleFilePlugin({ 
             files: { "jquery.min.js": [ "node_modules/jquery/dist/jquery.min.js"]}
         }),
         new miniCssExtractPlugin({
-            filename: "[name].[hash].css",
+            filename: "[name].[fullhash].css",
         }),
         new CopyPlugin({
             // Php copy is in a diffrent section for gen script to work
             patterns: [
                 { from: "src/robots.txt", to: "robots.txt", force: true },
+                //Fuck my life i hate webpack + not doing shit right :)
+                { from: "src/v86", to: "v86/" }
+                // Php copy is in a diffrent section for gen script to work
+                // { from: "src/php", to: "php/" }
             ]
         }),
         new HtmlWebpackPlugin({
@@ -81,16 +95,22 @@ var cfg = {
                 test: /\.(sass|scss|css)$/,
                 use: [miniCssExtractPlugin.loader, "css-loader", "sass-loader"]
             },
-            {
-                test: /\.(svg|eot|woff|woff2|ttf)$/,
-                use: ["file-loader"]
-            }
+
+
+            // Thanks! https://discourse.aurelia.io/t/problem-loading-css-from-html-or-js-module/3463/4
+            { test: /\.(png|gif|jpg|cur)$/i, loader: "url-loader", options: { limit: 8192 } },
+            { test: /\.(woff2)?$/i, loader: "url-loader", options: { limit: 10000, mimetype: "application/font-woff2" } },
+            { test: /\.(woff)?$/i, loader: "url-loader", options: { limit: 10000, mimetype: "application/font-woff" } },
+            { test: /\.(ttf|eot|svg|otf)?$/i, loader: "file-loader" },
+
         ]
-    },
+    }
 };
 
 
+var phpcopy = new CopyPlugin({ patterns: [{ from: "src/php", to: "php/" }]});
 var ran_already = false;
+
 module.exports = new Promise((resolve) => {
     if (process.argv.includes("serve")) {
         commandExists("php").then(function () {
@@ -119,13 +139,13 @@ module.exports = new Promise((resolve) => {
         }).catch(function () {
             console.log("php not installed, not running webpack dev server with php dev server :)");
             //because its not running with build, copy php folder
-            cfg["plugins"].push(new CopyPlugin({ patterns: [{ from: "src/php", to: "php/" }]}));
+            cfg["plugins"].push(phpcopy);
             resolve(cfg);
         });
     } else {
         console.log("webpack dev server not supposed to be starting, not starting php dev server if installed");
         // adding config to copy so we can still copy it on build :)
-        cfg["plugins"].push(new CopyPlugin({ patterns: [{ from: "src/php", to: "php/" }]}));
+        cfg["plugins"].push(phpcopy);
         resolve(cfg);
     }
 });

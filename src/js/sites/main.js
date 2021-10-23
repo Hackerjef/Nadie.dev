@@ -16,6 +16,8 @@ import "../background.js";
 //css
 import "../../css/profile.css";
 
+import "../terminal.js";
+
 const LOADINGBTNHTML = "<i class='fas fa-spinner fa-spin'></i>";
 var data = {};
 
@@ -44,6 +46,7 @@ window.webload = function (btnID, timeout=3000) {
         $("#discordpopup").modal("show");
         break;
     case "terminal":
+        //import xtermjs
         clearTimeout(data[btnID].timeout);
         $("#terminalpopup").on("hidden.bs.modal", function () {
             stop_load(btnID);
