@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadie</title>
+    <meta name="author" content="Nadie#0063">
+    <link rel="icon" href="php/discord.php?image">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+</head>
+
+<body>
+    <div id="main">
+        <div id="bg"></div>
+        <div id="content">
+            <div class="info">
+                <div class="avatar"></div>
+                <div class="name"><h4>Nadie (August)</h4></div>
+                <div class="seperator_vert" role="separator"></div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="github"><i class="fab fa-github"></i> Github</button>
+                    <div class="seperator_hor" role="separator"></div>
+                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="Twitter"><i class="fab fa-twitter"></i> Twitter</button>
+                    <div class="seperator_hor" role="separator"></div>
+                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="steam"><i class="fab fa-steam"></i> Steam</button>
+                    <div class="seperator_hor" role="separator"></div>
+                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="discord"><i class="fab fa-discord"></i> Discord</button>
+                    <div class="seperator_hor" role="separator"></div>
+                    <button class="btn btn-outline-dark rounded" onclick="webload(this.id)" id="terminal"><i class="fab fa-linux"></i> Terminal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Discord popup -->
+    <div class="modal fade hide " id="discordpopup" tabindex="-1" role="dialog" aria-labelledby="discordpopup">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>Hola, I do alot of stuff on discord, feel free to use the buttons below to see what discord
+                        related things I do!</p>
+                    <a>If you need to add me for any reason feel free to contact me:</a>
+                    <a><strong id="duser">None</strong> <a id="dID">None</a></a>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-dark rounded mr-auto" data-dismiss="modal" onclick="webload(this.id, 15)" id="discordbio"><i class="fab fa-discord"></i> Discord Bio</button>
+                    <button type="button" class="btn btn-outline-dark rounded" data-dismiss="modal" onclick="$('#discordpopup').modal('hide')" >Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terminal popup -->
+    <div class="modal fade hide" id="terminalpopup" tabindex="-1" role="dialog" aria-labelledby="terminalpopup">
+        <div class="modal-dialog modal-lg modal-dialog-term" role="document">
+            <div class="modal-content modal-content-term">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="Statusterminal">Terminal</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="terminaldiv"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark rounded" data-dismiss="modal" onclick="$('#terminalpopup').modal('hide')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./jquery.min.js"></script>
+    <script src="./v86/libv86.js"></script>
+</body>
+
+</html>

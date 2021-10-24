@@ -1,16 +1,17 @@
 {
-    "name": "augus/nadie.dev",
+    "name": "nadie/nadie.dev",
     "type": "project",
+    "license": "Unlicense",
     "authors": [
         {
-            "name": "August",
+            "name": "Nadie",
             "email": "hackerjef@users.noreply.github.com"
         }
     ],
     "require": {
-        "ralouphie/mimey": "^2.1",
-        "restcord/restcord": "^0.4.0",
-        "rmccue/requests": "^1.7",
+        "ralouphie/mimey": "^1.0",
+        "restcord/restcord": "^0.5.0",
+        "rmccue/requests": "^1.8",
         "cheprasov/php-redis-client": "^1.10"
     }
 }
