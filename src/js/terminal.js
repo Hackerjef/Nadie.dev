@@ -29,4 +29,23 @@ $("#terminalpopup").on("shown.bs.modal", function () {
     fitAddon.fit();
 });
 
+
+$(window).on("resize", function () {
+    if ($("#terminalpopup").hasClass("show")) {
+        try {
+            fitAddon.fit();
+            // TODO: SET RES OURSELVES :)
+            if ($("#terminalpopup")[0].offsetWidth <= 980) {
+                $("#terminalpopup").modal("hide");
+                console.log("Cannot make hight/width lower then W: 1000");
+            }
+            console.log("H: ", $("#terminalpopup")[0].offsetHeight);
+            console.log("W: ", $("#terminalpopup")[0].offsetWidth);
+        } catch (error) {
+            console.log("couldn't resize console window", error);
+        }
+    }
+});
+
+
 // TODO: implment libv86 to exist with webpack...... https://github.com/copy/v86/issues/373

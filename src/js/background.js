@@ -1,3 +1,5 @@
+/* eslint-env jquery */
+
 import "../css/background.css";
 
 var refreshDuration = 10000;
@@ -119,11 +121,15 @@ function refresh() {
     }, refreshDuration);
 }
 
-function onResize() {
+$(window).on("resize", function () {
     document.querySelector("#bg svg").remove();
     clearTimeout(refreshTimeout);
     onLoad();
-}
+});
 
-window.onload = onLoad;
-window.onresize = onResize;
+$(window).on("load", function () {
+    onLoad();
+});
+
+// window.onload = onLoad;
+// window.onresize = onResize;
